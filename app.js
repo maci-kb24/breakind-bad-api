@@ -1,9 +1,9 @@
 
-// document.getElementById('btn-random').addEventListener('click', randomCharacter);
+document.getElementById('btn-random').addEventListener('click', randomCharacter);
 
 document.getElementById('paperInputs3').addEventListener('input', findCharacter);
 
-// document.getElementById('btn-death').addEventListener('click', randomDeath);
+document.getElementById('btn-death').addEventListener('click', randomDeath);
 
 function findCharacter() {
   const characterName = document.getElementById('paperInputs3').value.trim();
@@ -32,7 +32,7 @@ function findCharacter() {
                  `
                 });
             document.getElementById('find').innerHTML = output;
-        })
+        })    
 }
 
 function randomCharacter() {
@@ -41,6 +41,7 @@ function randomCharacter() {
   fetch('https://www.breakingbadapi.com/api/character/random')
   .then(res => res.json())
   .then(data => {
+    console.log(data)
            let output = '';
            
               data.forEach(character => {
@@ -68,10 +69,10 @@ function randomCharacter() {
 function randomDeath() {
   fetch('https://www.breakingbadapi.com/api/random-death')
   .then(res => res.json())
-  .then(data => {
+  .then(character => {
+   
            let output = '';
            
-              data.forEach(character => {
                  output += `
                 <div class="card style="width: 20rem;">
                 <div style="border-right: 1px solid #d0d0d0;
@@ -88,7 +89,6 @@ function randomDeath() {
                   </div>
                 </div>
                  `
-                });
             document.getElementById('death').innerHTML = output;
         })
 }

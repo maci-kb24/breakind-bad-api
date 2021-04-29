@@ -44,7 +44,6 @@ nav {
     background-image: url('/images/488-4888164_bryan-cranston-breaking-bad-trailer-family-guy-the.png');
     background-position:left center;
     background-repeat: no-repeat;
-    /* background-size:contain; */
 }
 img {
     border-bottom-left-radius: 15px 255px!important;
@@ -60,4 +59,7 @@ img {
 .random-character p {
     width:50%;
     display: inline-block;
+}
+input:focus {
+    border-color: var(--green);
 }
